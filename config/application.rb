@@ -14,7 +14,7 @@ require "sprockets/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-config.assets.initialize_on_precompile = false
+
 
 module SampleApp
   class Application < Rails::Application
@@ -31,6 +31,7 @@ module SampleApp
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.assets.initialize_on_precompile = false
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
