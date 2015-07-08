@@ -3,6 +3,10 @@ gem 'rails', '4.2.3'
 
 gem 'sqlite3-ruby', '1.3.3', :group => :development
 
+gem 'jquery-rails', "~> 2.3.0"
+
+gem 'turbolinks'
+
 group :development do
 	gem 'rspec-rails', '2.0.1'
 end
