@@ -1,22 +1,18 @@
 Rails.application.routes.draw do
 
+  root                'static_pages#home'
 
-  get 'sessions/new'
-
-  get 'users/new'
-
-  root :to => 'static_pages#home'
-
-  get '/signup',  :to => 'users#new'
-  get '/contact', :to => 'static_pages#contact' 
-  get '/about', :to => 'static_pages#about' 
-  get '/help', :to => 'static_pages#help'
+  get '/signup'    => 'users#new'
+  get '/contact'   => 'static_pages#contact' 
+  get '/about'     => 'static_pages#about' 
+  get '/help'      => 'static_pages#help'
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
   resources :users
+  resources :account_activations, only: [:edit]
 
 
 
